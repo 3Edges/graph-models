@@ -4,8 +4,6 @@ A set of models for 3Edges
 These graph data models are meant to be loaded and visualized in the 3Edges Dynamic Authorization platform: https://3edges.io .
 Each model is a starting-point template provided to solve a specific authorization use-case. Those templates are meant to be used as-is, or modified as appropriate.
 
-Each file is a template that caters to a different authorization use-cass. All templates can be modified as needed to fit a wide variety of use-cases.
-
 ## Table of contents
 1. [How to use?](#howto)
 2. [Authorization Graphs](#graphs)
