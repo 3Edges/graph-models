@@ -127,7 +127,7 @@ A basic model to protect a file system. The files (typed "Documents" in this mod
 
 **Note:** The model distinguishes between 2 types of access privileges: Full Ownership (`OWNS` relationships), which assumes ful access, and Read-only access (`CAN_READ` relationships). 
 
-## Scripts:
+### Scripts:
 This model provides the following automation scripts:
 - **hashPwd** : hashes the user's passwords on User create and update (`onCreate` and `onUpdate` events).
 - **addCreateDt** : populates the CreateDt field of all new Documents with the date/time of the Document creation (`onCreate` event).
