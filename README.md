@@ -13,7 +13,6 @@ Each model is a starting-point template provided to solve a specific authorizati
    4. [Files](#files)
    5. [Consent-based authorization](#consent)
    6. [IoT Access](#iot)
-   7. [Verifiable Credentials Based Authorization (VCBAC)](#vc)
 
 # How to use <a name="howto"></a>
 To use these models, simply:
@@ -179,28 +178,3 @@ The Organization implementing this model sells and manages a huge fleet of IoT d
 
 ### Scripts:
 - **hashPwd** : hashes the user's passwords on User create and update (`onCreate` and `onUpdate` events).
-
-## Verifiable Credentials Based Authorization (VCBAC): `VerifiableCredentials-authz.json` <a name="vc"></a>
-3Edges understands [W3C compliant Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) (VC), and can leverage VCs for authorization. A VC is, in effect, an attribute or set of attributes pertaining to their Holder; they can therefore be used in Authorization just like any other attribute.
-VCs object types in 3Edges are labelled through the Ontology view, in the same way that Subjects or Resources Nodes are labelled.
-
-When 3Edges detects any VCs in its models, it also enables the Issuance of new VCs from the Data Dashboard UI service, through integrations with external providers (currently [Credivera](https://www.credivera.ca/)).
-
-### Model:
-![VCBAC](assets/images/VC.png "VC Authorization")
-
-### Use-Case:
-This model is for an organization that wants to issue *Proof of Employment* VCs to their employees. 
-- Employees can then hold these Employment Proofs within their own personal mobile/web wallets and present them as need to any verifier.
-- In particular, the issuing organization here (the employer) wants its employees to present their VCs during login, as an additional factor.
-- Furthermore, once logged-in, only employees should be able to access certain confidential documents. Holding the appropriate VC is the only necessary check in that case.
-
-**Note**: the model can easily be modified to enforce additional conditions, such as Role membership or more. 
-
-### Model-Types
-This model expands any VC into its main components, mainly:
-- **The Issuer**: A node type that represents the organization issuing the VC
-- **The Holder**: represents the holder of the VC, typically a user or human (but not necessarily.
-- **Claim**: Node type that represents the claims within the VC. These are the affirmations carried by the VC.
-- **User**: the entity trying to access the protected resource (here `Document`). The Users here are the Holders.
-- **Document**: represents a resource being protected. This can be modified to represent any resource, at any level of granularity.
