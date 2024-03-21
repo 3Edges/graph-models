@@ -13,6 +13,7 @@ Each model is a starting-point template provided to solve a specific authorizati
    4. [Files](#files)
    5. [Consent-based authorization](#consent)
    6. [IoT Access](#iot)
+   7. [Kantara Consent Receipt model](#kantara)
 
 # How to use <a name="howto"></a>
 To use these models, simply:
@@ -178,3 +179,19 @@ The Organization implementing this model sells and manages a huge fleet of IoT d
 
 ### Scripts:
 - **hashPwd** : hashes the user's passwords on User create and update (`onCreate` and `onUpdate` events).
+
+## Kantara Consent Receipt model : `Kantara-Consent-Model.json` <a name="kantara"></a>
+
+### Model
+![Kantara Consent](assets/images/Kantara_Consent.png "Kantara Consent Authorization")
+This model is a graph implementation of the Kantara Consent receipt specification, which is located here: https://kantarainitiative.org/download/7902/ .
+Please refer to the specification for all details about types and their properties.
+
+### Scripts:
+- **currentTimeStamp**: a simple script that adds a current timeStamp to consents when they are created.
+- **getConsent**: a Custom Mutation (CM): this queries the graph and returns TRUE if the given Controller has been Granted a Consent to access the given Resource for the given Purpose.
+Input parameters: `ContrEmail:String!, UserEmail:String!, ResName:String!, Purpose:String!, Service:String!` - This CM is added automatically to the generated GraphQL Schema.
+
+### Use-Case
+Store Consents in a standardized way, and query Consent data to determine if the given Controller can actually access the requested resource.
+
