@@ -1,7 +1,7 @@
-# 3Edges graph models
-A set of graph models for 3Edges
+# Standard graph models
+A set of graph models expressed in JGF format ([JSON Graph Format](https://jsongraphformat.info/)), and importable into 3Edges.
 
-These graph data models are meant to be loaded and visualized in the 3Edges Dynamic Authorization platform: https://3edges.io .
+These graph data models are meant to be loaded and visualized in any platform that supports JGF, such as 3Edges, the Dynamic Authorization platform: [https://3edges.io](https://3edges.io) .
 Each model is a starting-point template provided to solve a specific authorization use-case. Those templates are meant to be used as-is, or modified as appropriate.
 
 ## Table of contents
